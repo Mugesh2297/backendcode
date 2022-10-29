@@ -13,7 +13,7 @@ const bcrypt = require ("bcrypt");
 const jwt = require("jsonwebtoken");
 const {ObjectId} = require("mongodb");
 const nodemailer= require('nodemailer');
-var randomString = require("randomstring");
+
 
 
 
@@ -39,10 +39,7 @@ app.post("/forgotpassword", async(req,res,next)=>{
       }
       const id = existUser._id;
       db.collection.updateMany({}, {$set: {"fieldName": ""}})
-
-      const string = randomString.generate();
-      const insertedResponse = await mongo.selectedDb.collection("users").updateMany({_id:ObjectId(id)}, {$set: {"string": string}})
-      const token = jwt.sign(existUser,process.env.SECRET_KEY, {expiresIn: "15m"});
+      const token = jwt.sign(existUser,process.env.SECRET_KEY, {expiresIn: "2m"});
         const link = `https://crm22.netlify.app/resetpassword/${existUser._id}/${token}`;
           console.log(link);
     
