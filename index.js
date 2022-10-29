@@ -16,7 +16,6 @@ const nodemailer= require('nodemailer');
 
 
 
-
 dotenv.config();
 mongo.connect();
 
@@ -37,8 +36,6 @@ app.post("/forgotpassword", async(req,res,next)=>{
       if(!existUser){
         res.status(400).send({msg: "User Not Exists"}) 
       }
-      const id = existUser._id;
-      db.collection.updateMany({}, {$set: {"fieldName": ""}})
       const token = jwt.sign(existUser,process.env.SECRET_KEY, {expiresIn: "2m"});
         const link = `https://crm22.netlify.app/resetpassword/${existUser._id}/${token}`;
           console.log(link);
