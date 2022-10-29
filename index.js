@@ -14,7 +14,6 @@ const jwt = require("jsonwebtoken");
 const {ObjectId} = require("mongodb");
 const nodemailer= require('nodemailer');
 var randomString = require("randomstring");
-const {ObjectId} = require("mongodb");
 
 
 
