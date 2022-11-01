@@ -66,7 +66,7 @@ app.post("/forgotpassword", async(req,res,next)=>{
     
     
     }catch(err){
-      res.status(500).json({ Message: 'Something Went Wrong' });
+      res.status(500).json({ msg: 'Something Went Wrong' });
       console.log(err);
     }
     });
