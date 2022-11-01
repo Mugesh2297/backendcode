@@ -22,9 +22,8 @@ mongo.connect();
 
 
 const app = express();
-app.use(cors({
-  origin: "https://crm22.netlify.app",
-}));
+app.use(cors({origin:"*",
+credentials : true}));
 
 app.use(express.json());//to parse request of body 
 app.post("/forgotpassword", async(req,res,next)=>{
