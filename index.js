@@ -22,7 +22,7 @@ mongo.connect();
 
 
 const app = express();
-app.use(cors({origin:"*",
+app.use(cors({origin:"https://crm22.netlify.app/",
 credentials : true}));
 
 app.use(express.json());//to parse request of body 
