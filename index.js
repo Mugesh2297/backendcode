@@ -52,8 +52,9 @@ app.post("/forgotpassword", cors(), async (req, res, next) => {
       to: email,
       subject: "Password Reset",
       text: "Click this Link to Reset Your Password",
-      html: `<a href=${link} target="_blank"><button style="color:White;background-color:blue;">
-      Click Here to Reset Your Password</button></a>`
+      html: `<a href=${link} target="_blank"><button style="color:white;background-color:teal;
+      padding:15px; border:none; border-radius:10px;font-size:30px;text-shadow: 2px 2px 4px #000000;;">
+      Click Here to Reset your Password</button></a>`
     };
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
