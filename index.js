@@ -52,9 +52,9 @@ app.post("/forgotpassword", cors(), async (req, res, next) => {
       to: email,
       subject: "Password Reset",
       text: "Click this Link to Reset Your Password",
-      html: `<a href=${link} target="_blank"><button style="color:white;background-color:teal;
-      padding:15px; border:none; border-radius:10px;font-size:30px;text-shadow: 2px 2px 4px black">
-      Click Here to Reset your Password</button></a>`
+      html: `<center style="padding:50px"><a href=${link} target="_blank"><button style="color:white;background-color:teal;
+      padding:15px; border:none; border-radius:10px;font-size:30px;text-shadow: 2px 2px 4px #000000;;">
+      Click Here to Reset your Password</button></a></center>`
     };
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
